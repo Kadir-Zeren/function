@@ -99,38 +99,50 @@
 // console.log("VOLUME:", volume(r, h).toPrecision(4));
 // console.log("VOLUME:", volume(r, h).toExponential(4));
 
-const add = (n1, n2) => n1 + n2;
-const sub = (n1, n2) => n1 - n2;
-const mul = (n1, n2) => n1 * n2;
-const div = (n1, n2) => n1 / n2;
+// const add = (n1, n2) => n1 + n2;
+// const sub = (n1, n2) => n1 - n2;
+// const mul = (n1, n2) => n1 * n2;
+// const div = (n1, n2) => n1 / n2;
 
-const compute = (n1, n2, Operator) => {
-  let result = 0;
-  switch (Operator) {
-    case "+":
-      result = add(n1, n2);
-      break;
-    case "-":
-      result = sub(n1, n2);
-      break;
-    case "x":
-    case "*":
-      result = mul(n1, n2);
-      break;
-    case "/":
-      result = div(n1, n2);
-      break;
+// const compute = (n1, n2, Operator) => {
+//   let result = 0;
+//   switch (Operator) {
+//     case "+":
+//       result = add(n1, n2);
+//       break;
+//     case "-":
+//       result = sub(n1, n2);
+//       break;
+//     case "x":
+//     case "*":
+//       result = mul(n1, n2);
+//       break;
+//     case "/":
+//       result = div(n1, n2);
+//       break;
 
-    default:
-      alert("Incorret Operator");
-      result = "";
-      break;
+//     default:
+//       alert("Incorret Operator");
+//       result = "";
+//       break;
+//   }
+//   return result;
+// };
+
+// const n1 = +prompt("First Number");
+// const Operator = prompt("Operator?");
+// const n2 = +prompt("Second Number");
+
+// console.log(`${n1}${Operator}${n2}=${compute(n1, n2, Operator)}`);
+
+const fakto = (n) => {
+  let f = 1;
+  for (let i = n; i > 1; i--) {
+    f = f * i;
   }
-  return result;
+  return f;
 };
 
-const n1 = +prompt("First Number");
-const Operator = prompt("Operator?");
-const n2 = +prompt("Second Number");
+const number = +prompt("n:");
 
-console.log(`${n1}${Operator}${n2}=${compute(n1, n2, Operator)}`);
+console.log(`Fakto(${number})= ${fakto(number)}`);
