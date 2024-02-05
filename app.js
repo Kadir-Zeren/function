@@ -147,16 +147,60 @@
 
 // console.log(`Fakto(${number})= ${fakto(number)}`);
 
-const fakto = (n) => {
-  if (n < 1) {
-    return 1;
-  } else {
-    return n * fakto(n - 1);
-  }
+// const fakto = (n) => {
+//   if (n < 1) {
+//     return 1;
+//   } else {
+//     return n * fakto(n - 1);
+//   }
+// };
+
+// const number = +prompt("n:");
+
+// number < 0
+//   ? alert("number should be bigger than zero")
+//   : console.log(`fakto(${number})= ${fakto(number)}`);
+
+console.log("******* SCOPE ********");
+
+let number1 = 3; //?Global
+let number2 = 5; //?Global
+console.log(number1); //?3
+
+const funk1 = () => {
+  number1 = 44; //? Global deiskene atama yapildi
+  const number2 = 7; //? local (block-scoped) degisken
+  console.log("LOCAL:", number2); //? 7
 };
 
-const number = +prompt("n:");
+funk1();
 
-number < 0
-  ? alert("number should be bigger than zero")
-  : console.log(`fakto(${number})= ${fakto(number)}`);
+console.log(number1); //? 44
+console.log("GLOBAL:", number2); //? global number2 (5)
+
+//? Blocked Scope
+{
+  let x = 77;
+  x++;
+  console.log(x);
+}
+number2 = 4;
+console.log(number2);
+
+
+
+//? Muadili
+var number3;
+console.log(number3);
+number3 = 101; //? Hoisted degiskendir
+console.log(number3);
+
+// var result
+if (number3 === 102) {
+  let result = "Hi";
+  console.log(result);
+} else {
+  console.log(result);
+  var result = "Hello";
+}
+console.log(result);
