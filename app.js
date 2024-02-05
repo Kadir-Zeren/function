@@ -135,14 +135,28 @@
 
 // console.log(`${n1}${Operator}${n2}=${compute(n1, n2, Operator)}`);
 
+// const fakto = (n) => {
+//   let f = 1;
+//   for (let i = n; i > 1; i--) {
+//     f = f * i;
+//   }
+//   return f;
+// };
+
+// const number = +prompt("n:");
+
+// console.log(`Fakto(${number})= ${fakto(number)}`);
+
 const fakto = (n) => {
-  let f = 1;
-  for (let i = n; i > 1; i--) {
-    f = f * i;
+  if (n < 1) {
+    return 1;
+  } else {
+    return n * fakto(n - 1);
   }
-  return f;
 };
 
 const number = +prompt("n:");
 
-console.log(`Fakto(${number})= ${fakto(number)}`);
+number < 0
+  ? alert("number should be bigger than zero")
+  : console.log(`fakto(${number})= ${fakto(number)}`);
