@@ -37,3 +37,16 @@ const result1 = add(3, 5);
 const result2 = add(5, 9);
 const result3 = addShort(47, 3);
 console.log(result1, result2, result3);
+
+function isEvenOrOdd(num) {
+  if (num % 2 === 0) {
+    return "EVEN";
+  } else {
+    return "ODD";
+  }
+}
+function isEvenOrOdd(num) {
+  return num % 2 === 0 ? "EVEN" : "ODD";
+}
+const num = prompt("Please enter a number:");
+console.log(`${num} is ${isEvenOrOdd(num)}`);
